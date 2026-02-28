@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Experience Level</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="experience-container">
+    <h2>Select Your Experience Level</h2>
+
+    <div class="tiles">
+      <div class="tile" onclick="selectLevel('student')" id="student">
+        🎓 Student
+      </div>
+      <div class="tile" onclick="selectLevel('fresher')" id="fresher">
+        🌱 Fresher
+      </div>
+      <div class="tile" onclick="selectLevel('experienced')" id="experienced">
+        💼 Experienced
+      </div>
+    </div>
+
+    <button id="continueBtn" onclick="continueNext()" disabled>
+      Continue
+    </button>
+
+    <p id="msg"></p>
+  </div>
+
+  <script type="module" src="js/experience.js"></script>
+</body>
+</html>

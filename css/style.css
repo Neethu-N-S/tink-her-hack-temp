@@ -1,0 +1,304 @@
+/* =========================
+   GLOBAL RESET & BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #000;
+  color: #39ff14;
+}
+
+/* =========================
+   LOGIN / SIGNUP PAGE
+========================= */
+.auth-box {
+  width: 340px;
+  padding: 30px 25px;
+  background: #0a0a0a;
+  border: 2px solid #39ff14;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+  text-align: center;
+  margin: 120px auto;
+}
+
+.auth-box h2 {
+  color: #39ff14;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.auth-box input {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  background: #000;
+  border: 1.5px solid #39ff14;
+  border-radius: 6px;
+  color: #39ff14;
+  outline: none;
+}
+
+.auth-box input::placeholder {
+  color: #7cff6b;
+}
+
+.auth-box button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  background: #39ff14;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.auth-box button:hover {
+  background: #000;
+  color: #39ff14;
+  border: 1.5px solid #39ff14;
+  box-shadow: 0 0 12px rgba(57, 255, 20, 0.7);
+}
+
+#msg {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #ff4c4c;
+}
+
+/* =========================
+   DASHBOARD PAGE
+========================= */
+.dashboard-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resume-btn {
+  padding: 20px 40px;
+  font-size: 22px;
+  font-weight: bold;
+  background: transparent;
+  color: #39ff14;
+  border: 2px solid #39ff14;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(57, 255, 20, 0.6);
+  transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+  background: #39ff14;
+  color: #000;
+  box-shadow: 0 0 35px rgba(57, 255, 20, 0.9);
+  transform: scale(1.05);
+}
+
+/* =========================
+   EXPERIENCE SELECTION
+========================= */
+.experience-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.experience-container h2 {
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.tiles {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.tile {
+  width: 180px;
+  height: 120px;
+  border: 2px solid #39ff14;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.tile:hover {
+  background: #39ff14;
+  color: #000;
+  box-shadow: 0 0 20px rgba(57, 255, 20, 0.7);
+}
+
+.tile.selected {
+  background: #39ff14;
+  color: #000;
+  box-shadow: 0 0 25px rgba(57, 255, 20, 1);
+}
+
+#continueBtn {
+  padding: 12px 40px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #39ff14;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+#continueBtn:enabled {
+  opacity: 1;
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.8);
+}
+
+#continueBtn:hover:enabled {
+  background: #000;
+  color: #39ff14;
+  border: 1.5px solid #39ff14;
+}
+
+/* =========================
+   RESUME FORM PAGE
+========================= */
+.form-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #0a0a0a;
+  border: 2px solid #39ff14;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(57, 255, 20, 0.4);
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: #000;
+  border: 1.5px solid #39ff14;
+  border-radius: 6px;
+  color: #39ff14;
+  outline: none;
+}
+
+.form-container textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-container button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 15px;
+  background: #39ff14;
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background: #000;
+  color: #39ff14;
+  border: 1.5px solid #39ff14;
+}
+
+/* TEMPLATE SELECTION */
+.template-container {
+  min-height: 100vh;
+  background: #000;
+  color: #39ff14;
+  text-align: center;
+  padding: 40px;
+}
+
+.color-palette {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0 30px;
+}
+
+.color-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+}
+
+.template-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.template-preview {
+  width: 180px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.template-preview:hover {
+  transform: scale(1.05);
+}
+
+.template-preview.selected {
+  border-color: #39ff14;
+  box-shadow: 0 0 15px rgba(57,255,20,0.8);
+}
+
+.font-select {
+  margin-bottom: 25px;
+}
+
+#continueBtn {
+  padding: 12px 40px;
+  background: #39ff14;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+#continueBtn:enabled {
+  opacity: 1;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Select Field</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="experience-container">
+  <h2>Select Your Field</h2>
+
+  <div class="tiles">
+    <div class="tile" onclick="selectField('technology')" id="technology">💻 Technology</div>
+    <div class="tile" onclick="selectField('medical')" id="medical">🩺 Medical</div>
+    <div class="tile" onclick="selectField('management')" id="management">📊 Management</div>
+    <div class="tile" onclick="selectField('design')" id="design">🎨 Design</div>
+  </div>
+
+  <button id="continueBtn" onclick="goNext()" disabled>Continue</button>
+</div>
+
+<script type="module" src="js/field.js"></script>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume Builder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h1, h2 {
+      color: #39ff14;
+      margin-bottom: 30px;
+    }
+
+    .form-section {
+      display: none;
+      max-width: 900px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .form-card {
+      background: #111;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 0 25px rgba(57, 255, 20, 0.15);
+    }
+
+    .form-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .form-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      font-size: 14px;
+      margin-bottom: 6px;
+      color: #bbb;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      padding: 14px;
+      font-size: 15px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      background: #000;
+      color: #fff;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #39ff14;
+      box-shadow: 0 0 6px rgba(57, 255, 20, 0.6);
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    .full-width { width: 100%; }
+    .short-width { max-width: 150px; }
+
+    .btn-row {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 16px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #39ff14;
+      color: #000;
+    }
+
+    .btn-secondary {
+      background: #222;
+      color: #fff;
+      border: 1px solid #555;
+    }
+
+    .summary-card {
+      background: #111;
+      padding: 30px;
+      border-radius: 16px;
+      margin-top: 20px;
+      text-align: left;
+      white-space: pre-wrap;
+    }
+
+    @media (max-width: 600px) {
+      .form-row { flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <h1>Resume Builder</h1>
+
+  <!-- BASIC DETAILS -->
+  <div id="basicForm" class="form-section" style="display:block;">
+    <h2>Basic Details</h2>
+    <div class="form-card">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input id="firstName" type="text">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input id="lastName" type="text">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>City</label>
+          <input id="city" type="text">
+        </div>
+        <div class="form-group">
+          <label>Country</label>
+          <input id="country" type="text">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Pincode</label>
+          <input id="pincode" type="text">
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input id="phone" type="tel">
+        </div>
+      </div>
+      <div class="form-group full-width">
+        <label>Email</label>
+        <input id="email" type="email">
+      </div>
+      <button class="btn btn-primary" onclick="showExperienceForm()">Continue</button>
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div id="experienceForm" class="form-section">
+    <h2>Experience</h2>
+    <div class="form-card">
+      <div class="form-group full-width">
+        <label>Job Title</label>
+        <input id="jobTitle" type="text">
+      </div>
+      <div class="form-group full-width">
+        <label>Employer</label>
+        <input id="employer" type="text">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Start Date (dd mm yyyy)</label>
+          <input id="startDate" type="text" placeholder="01 01 2022">
+        </div>
+        <div class="form-group">
+          <label>End Date (dd mm yyyy)</label>
+          <input id="endDate" type="text" placeholder="31 12 2022">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>City</label>
+          <input id="expCity" type="text">
+        </div>
+        <div class="form-group">
+          <label>Country</label>
+          <input id="expCountry" type="text">
+        </div>
+      </div>
+      <button class="btn btn-primary" onclick="showDescriptiveForm()">Continue</button>
+    </div>
+  </div>
+
+  <!-- DESCRIPTIVE INFO -->
+  <div id="descriptiveForm" class="form-section">
+    <h2>Experience & Projects</h2>
+    <div class="form-card">
+      <div class="form-group full-width">
+        <label>Brief info about your experience</label>
+        <textarea id="experienceText" rows="4"></textarea>
+      </div>
+      <div class="form-group full-width">
+        <label>Detail your projects</label>
+        <textarea id="projectsText" rows="4"></textarea>
+      </div>
+      <button class="btn btn-primary" onclick="showEducationForm()">Continue</button>
+    </div>
+  </div>
+
+  <!-- EDUCATION -->
+  <div id="educationForm" class="form-section">
+    <h2>Education</h2>
+    <div class="form-card">
+      <div class="form-row">
+        <div class="form-group">
+          <label>School Name</label>
+          <input id="schoolName" type="text">
+        </div>
+        <div class="form-group">
+          <label>School Location</label>
+          <input id="schoolLocation" type="text">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Field of Study</label>
+          <input id="fieldStudy" type="text">
+        </div>
+        <div class="form-group">
+          <label>Qualification</label>
+          <input id="qualification" type="text">
+        </div>
+      </div>
+      <div class="form-group short-width">
+        <label>Graduation Year</label>
+        <input id="gradYear" type="text">
+      </div>
+      <button class="btn btn-primary" onclick="showSkillsForm()">Continue</button>
+    </div>
+  </div>
+
+  <!-- SKILLS & SUMMARY -->
+  <div id="skillsForm" class="form-section">
+    <h2>Skills & Summary</h2>
+    <div class="form-card">
+      <div class="form-group full-width">
+        <label>Skills</label>
+        <textarea id="skillsText" rows="3"></textarea>
+      </div>
+      <div class="form-group full-width">
+        <label>Short Summary About Yourself</label>
+        <textarea id="personalSummary" rows="4"></textarea>
+      </div>
+      <button class="btn btn-primary" onclick="generateResume()">Generate Resume</button>
+    </div>
+  </div>
+
+  <!-- FINAL SUMMARY -->
+  <div id="finalSummary" class="form-section">
+    <h2>Resume Preview</h2>
+    <div class="summary-card" id="summaryCard"></div>
+  </div>
+
+</div>
+
+<!-- jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+function showExperienceForm() {
+  document.getElementById("basicForm").style.display = "none";
+  document.getElementById("experienceForm").style.display = "block";
+}
+function showDescriptiveForm() {
+  document.getElementById("experienceForm").style.display = "none";
+  document.getElementById("descriptiveForm").style.display = "block";
+}
+function showEducationForm() {
+  document.getElementById("descriptiveForm").style.display = "none";
+  document.getElementById("educationForm").style.display = "block";
+}
+function showSkillsForm() {
+  document.getElementById("educationForm").style.display = "none";
+  document.getElementById("skillsForm").style.display = "block";
+}
+
+// Generate PDF with template
+function generateResume() {
+  const data = {
+    firstName: document.getElementById("firstName").value,
+    lastName: document.getElementById("lastName").value,
+    city: document.getElementById("city").value,
+    country: document.getElementById("country").value,
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    jobTitle: document.getElementById("jobTitle").value,
+    employer: document.getElementById("employer").value,
+    startDate: document.getElementById("startDate").value,
+    endDate: document.getElementById("endDate").value,
+    expCity: document.getElementById("expCity").value,
+    expCountry: document.getElementById("expCountry").value,
+    experienceText: document.getElementById("experienceText").value,
+    projectsText: document.getElementById("projectsText").value,
+    schoolName: document.getElementById("schoolName").value,
+    schoolLocation: document.getElementById("schoolLocation").value,
+    fieldStudy: document.getElementById("fieldStudy").value,
+    qualification: document.getElementById("qualification").value,
+    gradYear: document.getElementById("gradYear").value,
+    skillsText: document.getElementById("skillsText").value,
+    personalSummary: document.getElementById("personalSummary").value
+  };
+
+  let template = `
+========================================
+           RESUME
+========================================
+
+Name: {firstName} {lastName}
+Location: {city}, {country}
+Email: {email} | Phone: {phone}
+
+----------------------------------------
+EXPERIENCE
+Job Title: {jobTitle}
+Employer: {employer}
+Duration: {startDate} - {endDate}
+Location: {expCity}, {expCountry}
+
+Brief Info: {experienceText}
+Projects: {projectsText}
+
+----------------------------------------
+EDUCATION
+School: {schoolName}
+Location: {schoolLocation}
+Field of Study: {fieldStudy}
+Qualification: {qualification}
+Graduation Year: {gradYear}
+
+----------------------------------------
+SKILLS
+{skillsText}
+
+SUMMARY
+{personalSummary}
+`;
+
+  // Replace placeholders
+  for (let key in data) {
+    template = template.replace(new RegExp(`{${key}}`, 'g'), data[key]);
+  }
+
+  // Show preview
+  document.getElementById("skillsForm").style.display = "none";
+  document.getElementById("finalSummary").style.display = "block";
+  document.getElementById("summaryCard").innerText = template;
+
+  // Generate PDF
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  const lines = doc.splitTextToSize(template, 180);
+  doc.text(lines, 10, 10);
+  doc.save("Resume.pdf");
+}
+</script>
+
+</body>
+</html>

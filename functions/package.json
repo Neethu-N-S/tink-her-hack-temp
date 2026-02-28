@@ -1,0 +1,12 @@
+{
+  "name": "functions",
+  "description": "Firebase Cloud Functions",
+  "dependencies": {
+    "firebase-functions": "^4.0.0",
+    "firebase-admin": "^11.0.0",
+    "node-fetch": "^3.3.2"
+  },
+  "engines": {
+    "node": "18"
+  }
+}
